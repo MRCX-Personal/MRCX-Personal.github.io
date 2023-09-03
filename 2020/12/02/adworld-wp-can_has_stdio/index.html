@@ -4,15 +4,24 @@
   <meta charset="utf-8">
   
   
-  <title>归档 | Hexo</title>
+  <title>CTF学习笔记-攻防世界WP can_has_stdio? | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="题目名称：can_has_stdio? 题目来源：tinyctf-2014 题目类型：MISC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CTF学习笔记-攻防世界WP can_has_stdio?">
+<meta property="og:url" content="http://example.com/2020/12/02/adworld-wp-can_has_stdio/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="题目名称：can_has_stdio? 题目来源：tinyctf-2014 题目类型：MISC">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/12/02/eDHz6ik3pvF2VBL.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/02/8x6r5O47HYM3o92.png">
+<meta property="article:published_time" content="2020-12-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-02T14:54:01.075Z">
 <meta property="article:author" content="test">
+<meta property="article:tag" content="MISC">
+<meta property="article:tag" content="CTF">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/12/02/eDHz6ik3pvF2VBL.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -71,216 +80,95 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/08/21/death_ping/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-08-20T16:00:00.000Z" itemprop="datePublished">8月 21</time>
+        <section id="main"><article id="post-adworld-wp-can_has_stdio" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/12/02/adworld-wp-can_has_stdio/" class="article-date">
+  <time class="dt-published" datetime="2020-12-01T16:00:00.000Z" itemprop="datePublished">2020-12-02</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CTF/">CTF</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/08/21/death_ping/">CTF学习笔记-CTFhub 死亡ping命令</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      CTF学习笔记-攻防世界WP can_has_stdio?
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/08/18/Creative_a_server/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-08-17T16:00:00.000Z" itemprop="datePublished">8月 18</time>
-</a>
+    <div class="e-content article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/08/18/Creative_a_server/">从无到有，打造一台属于自己的公网服务器</a>
-    </h1>
-  
+        <ul>
+<li>题目名称：can_has_stdio?</li>
+<li>题目来源：tinyctf-2014</li>
+<li>题目类型：MISC</li>
+</ul>
+<hr>
+<p>  <escape><span id="more"></span></escape></p>
+<ul>
+<li>题目链接：<a target="_blank" rel="noopener" href="https://adworld.xctf.org.cn/task/answer?type=misc&number=1&grade=1&id=4754" title="https://adworld.xctf.org.cn/task/answer?type=misc&amp;number=1&amp;grade=1&amp;id=4754">https://adworld.xctf.org.cn/task/answer?type=misc&number=1&grade=1&id=4754</a></li>
+<li>关键词：brainfuck</li>
+</ul>
+<p>下载附件，得到一个文件。<br>没有后缀名，直接用记事本打开</p>
+<p>发现有一个大星星ヾ(•ω•&#96;)o</p>
+<div align="center">
+    <img src="https://i.loli.net/2020/12/02/eDHz6ik3pvF2VBL.png" style="zoom:50%" align=center />
+</div>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/08/08/filesbomb/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-08-07T16:00:00.000Z" itemprop="datePublished">8月 8</time>
-</a>
+<p>毫无头绪。。。<br>遂去查WP，得知这个是一种叫做”brainfuck“的语言。<br>用在线解密工具解密，得到flag</p>
+<div align="center">
+    <img src="https://i.loli.net/2020/12/02/8x6r5O47HYM3o92.png" style="zoom:60%" align=center />
+</div>
+
+<p>flag：</p>
+<pre><code>flag&#123;esolangs_for_fun_and_profit&#125;
+</code></pre>
+<p>又是一个新的知识点呢。。</p>
+<p>附在线解密网站：<a target="_blank" rel="noopener" href="http://ctf.ssleye.com/brain.html" title="http://ctf.ssleye.com/brain.html">http://ctf.ssleye.com/brain.html</a></p>
+
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/08/08/filesbomb/">CTF学习笔记-文件泄露类题目总结</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/08/06/Genshin_improve/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-08-05T16:00:00.000Z" itemprop="datePublished">8月 6</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/12/02/adworld-wp-can_has_stdio/" data-id="clm2to8zu0009cova9nos84t9" data-title="CTF学习笔记-攻防世界WP can_has_stdio?" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/08/06/Genshin_improve/">《原神》优化指北</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/08/05/qx5252tips/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-08-04T16:00:00.000Z" itemprop="datePublished">8月 5</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/08/05/qx5252tips/">QX5252使用小注</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/06/05/bugku-wp-getshell/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-06-04T16:00:00.000Z" itemprop="datePublished">6月 5</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/06/05/bugku-wp-getshell/">CTF学习笔记-Bugku getshell</a>
-    </h1>
-  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MISC/" rel="tag">MISC</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/12/10/adworld-wp-wireshark-1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          CTF学习笔记-攻防世界WP wireshark-1
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/12/01/hyouka20201208/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">冰菓 Hyouka 米泽穗信 资源共享</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/06/01/bugku-wp-game1/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-05-31T16:00:00.000Z" itemprop="datePublished">6月 1</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/06/01/bugku-wp-game1/">CTF学习笔记-Bugku game1</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/04/23/ctf-cryptos/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-04-22T16:00:00.000Z" itemprop="datePublished">4月 23</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/23/ctf-cryptos/">CTF学习笔记-crypto的一些总结（未完待续）</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/04/10/bugku-wp-collect1/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-04-09T16:00:00.000Z" itemprop="datePublished">4月 10</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/10/bugku-wp-collect1/">CTF学习笔记-Bugku 社工-初步收集</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/01/30/adworld-wp-Mysterious-GIF/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-01-29T16:00:00.000Z" itemprop="datePublished">1月 30</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/30/adworld-wp-Mysterious-GIF/">CTF学习笔记-攻防世界WP Mysterious-GIF</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">下一页 &raquo;</a>
-  </nav>
 
 </section>
         
