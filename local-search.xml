@@ -5,8 +5,8 @@
   
   <entry>
     <title>从无到有，打造一台属于自己的公网服务器</title>
-    <link href="/project/2021/08/18/Creative_a_server/"/>
-    <url>/project/2021/08/18/Creative_a_server/</url>
+    <link href="/2021/08/18/Creative_a_server/"/>
+    <url>/2021/08/18/Creative_a_server/</url>
     
     <content type="html"><![CDATA[<p>上个周笔者拿一块Intel Atom z8300的小主板成功搭建了能在公网访问的服务器。这篇文章记录一下详细经过，也能当一个教程来看。</p><hr><p>  <escape><span id="more"></span></escape></p><p><img src="https://i.loli.net/2021/08/18/wFqN5L8ZjExWAJz.jpg" alt="web授课-page-001.jpg"></p><p><img src="https://i.loli.net/2021/08/18/BGjg21bvIFsSWUZ.jpg" alt="web授课-page-002.jpg"></p><p><img src="https://i.loli.net/2021/08/18/FY7sTXMgZ5xtr3I.jpg" alt="web授课-page-003.jpg"></p><p><img src="https://i.loli.net/2021/08/18/OPDbSpn8yWhJxB2.jpg" alt="web授课-page-004.jpg"></p><p><img src="https://i.loli.net/2021/08/18/3DOY9nrwjJbkXQI.jpg" alt="web授课-page-005.jpg"></p><p><img src="https://i.loli.net/2021/08/18/bDuNdBTP9qlCeSj.jpg" alt="web授课-page-006.jpg"></p><pre><code class="hljs">[Unit]Description=SakuraFrp ServiceAfter=network.target[Service]Type=idleUser=nobodyRestart=onfailureRestartSec=60sExecStart你的 frpc 路径 f %i[Install]WantedBy=multiuser.target</code></pre><p>参考资料：<a href="https://doc.natfrp.com/#/">https://doc.natfrp.com/#/</a></p>]]></content>
     
@@ -36,8 +36,8 @@
   
   <entry>
     <title>CTF学习笔记-文件泄露类题目总结</title>
-    <link href="/project/2021/08/08/filesbomb/"/>
-    <url>/project/2021/08/08/filesbomb/</url>
+    <link href="/2021/08/08/filesbomb/"/>
+    <url>/2021/08/08/filesbomb/</url>
     
     <content type="html"><![CDATA[<p>总结了有些关于文件源码泄露的常见题型。</p><hr><p>  <escape><span id="more"></span></escape></p><ul><li>题目链接：没有</li><li>关键词：WEB、文件泄露</li></ul><p><img src="https://i.loli.net/2021/08/08/9Pt4OuLKgzMAXTY.jpg" alt="文件泄露类题目总结-page-001.jpg"></p><p><img src="https://i.loli.net/2021/08/08/wZBAqiLQ8Eerg1o.jpg" alt="文件泄露类题目总结-page-002.jpg"></p><p><img src="https://i.loli.net/2021/08/08/fb8kuEhlLIN1FVr.jpg" alt="文件泄露类题目总结-page-003.jpg"></p><p><img src="https://i.loli.net/2021/08/08/1PpGCcUXNdFvlmy.jpg" alt="文件泄露类题目总结-page-004.jpg"></p><p><img src="https://i.loli.net/2021/08/08/bIOl91WvQJgqsaR.jpg" alt="文件泄露类题目总结-page-005.jpg"></p><p>参考资料：<a href="https://www.secpulse.com/archives/55286.html">https://www.secpulse.com/archives/55286.html</a><br><a href="https://www.ctfhub.com/#/skilltree">https://www.ctfhub.com/#/skilltree</a></p>]]></content>
     
@@ -63,8 +63,8 @@
   
   <entry>
     <title>QX5252使用小注</title>
-    <link href="/project/2021/08/05/qx5252tips/"/>
-    <url>/project/2021/08/05/qx5252tips/</url>
+    <link href="/2021/08/05/qx5252tips/"/>
+    <url>/2021/08/05/qx5252tips/</url>
     
     <content type="html"><![CDATA[<p>准备让这个博客活起来，不只是流水账的记录CTF学习历程。正好最近用QX5252制作了一些东西，顺便写篇博客记一下踩过的坑和这个IC一些注意事项。（封面大雾）</p><hr><p>  <escape><span id="more"></span></escape></p><p>该IC的datasheet能从各种网站搜索到，这里放个百度文库的连接把。<a href="https://wenku.baidu.com/view/574fdbaf50e2524de5187ec3.html">https://wenku.baidu.com/view/574fdbaf50e2524de5187ec3.html</a></p><p>官方描述这是个“太阳能草坪灯”专用IC，其实就是个集成输入&#x2F;输出电流检测、电源管理、充放电控制、LED驱动、肖基特二极管的高度集成电路，能做个灯，也能做个电感表什么的。</p><p>其电感大小与电流大小关系大致如下表：<br><img src="https://i.loli.net/2021/08/08/izmqcVBPMY5FUN6.png" alt="image.png"></p><p>设计电路时需要注意的几个地方：<br>1.采用的储能原件（比如电池）要低于2.5v，建议使用2v的镍镉电池。电池电压过大会使感光功能不工作，即不论太阳能板有没有输入LED都会供电。<br>2.LED尽量使用小功率的，驱动电压1.8~3v，电压太大的这个IC带不起来，功率太大的容易烧管子。<br>3.太阳能板2v左右。</p>]]></content>
     
@@ -92,8 +92,8 @@
   
   <entry>
     <title>CTF学习笔记-Bugku getshell</title>
-    <link href="/project/2021/06/05/bugku-wp-getshell/"/>
-    <url>/project/2021/06/05/bugku-wp-getshell/</url>
+    <link href="/2021/06/05/bugku-wp-getshell/"/>
+    <url>/2021/06/05/bugku-wp-getshell/</url>
     
     <content type="html"><![CDATA[<ul><li>题目名称：getshell</li><li>题目来源：？</li><li>题目类型：WEB、PHP</li></ul><hr><p>  <escape><span id="more"></span></escape></p><ul><li>题目链接：<a href="https://ctf.bugku.com/challenges/detail/id/107.html">https://ctf.bugku.com/challenges/detail/id/107.html</a></li><li>关键词：WEB、绕过</li></ul><p><img src="https://i.loli.net/2021/06/05/jF7VPicfLezMQN2.jpg" alt="Getshell-page-001.jpg"><br><img src="https://i.loli.net/2021/06/05/BF1Wz38XiyDj5Ig.jpg" alt="Getshell-page-002.jpg"><br><img src="https://i.loli.net/2021/06/05/WuKzOZC289NncPS.jpg" alt="Getshell-page-003.jpg"><br><img src="https://i.loli.net/2021/06/05/tW7rhTRugkEZ4IB.jpg" alt="Getshell-page-004.jpg"><br><img src="https://i.loli.net/2021/06/05/f1bBJwWUXVKzZrn.jpg" alt="Getshell-page-005.jpg"><br><img src="https://i.loli.net/2021/06/05/gV9Uo2WqXP4IMTB.jpg" alt="Getshell-page-006.jpg"></p><p>用到的工具：PHP混淆在线解密：<a href="https://www.zhaoyuanma.com/phpjm.html" title="PHP混淆在线解密">https://www.zhaoyuanma.com/phpjm.html</a></p><p>参考资料：<br><a href="https://blog.csdn.net/zlzg007/article/details/108462813">https://blog.csdn.net/zlzg007/article/details/108462813</a><br><a href="https://www.cnblogs.com/-qing-/p/10944118.html">https://www.cnblogs.com/-qing-/p/10944118.html</a><br><a href="https://blog.csdn.net/kong_free/article/details/106891179">https://blog.csdn.net/kong_free&#x2F;article&#x2F;details&#x2F;106891179</a></p>]]></content>
     
@@ -121,8 +121,8 @@
   
   <entry>
     <title>CTF学习笔记-Bugku game1</title>
-    <link href="/project/2021/06/01/bugku-wp-game1/"/>
-    <url>/project/2021/06/01/bugku-wp-game1/</url>
+    <link href="/2021/06/01/bugku-wp-game1/"/>
+    <url>/2021/06/01/bugku-wp-game1/</url>
     
     <content type="html"><![CDATA[<ul><li>题目名称：game1</li><li>题目来源：？</li><li>题目类型：WEB、游戏题</li></ul><hr><p>  <escape><span id="more"></span></escape></p><ul><li>题目链接：<a href="https://ctf.bugku.com/challenges/detail/id/236.html" title="https://ctf.bugku.com/challenges/detail/id/236.html">https://ctf.bugku.com/challenges/detail/id/236.html</a></li><li>关键词：WEB、游戏、JavaScript</li></ul><p><img src="https://i.loli.net/2021/06/01/qXEAn4Pomcifds6.jpg" alt="game1-page-001.jpg"><br><img src="https://i.loli.net/2021/06/01/n5ZfYXkemtsjhgV.jpg" alt="game1-page-002.jpg"><br><img src="https://i.loli.net/2021/06/01/QyVLcBjOTGnIX9t.jpg" alt="game1-page-003.jpg"></p>]]></content>
     
@@ -148,8 +148,8 @@
   
   <entry>
     <title>CTF学习笔记-crypto的一些总结（未完待续）</title>
-    <link href="/project/2021/04/23/ctf-cryptos/"/>
-    <url>/project/2021/04/23/ctf-cryptos/</url>
+    <link href="/2021/04/23/ctf-cryptos/"/>
+    <url>/2021/04/23/ctf-cryptos/</url>
     
     <content type="html"><![CDATA[<p>总结了一下CTF中常见的一些密码学crypto的题以及相关加解密网站</p><hr><p>  <escape><span id="more"></span></escape></p><ul><li>关键词：MISC、crypto</li></ul><hr><p>先放点干货-几个比较全的网站：</p><ol><li><a href="http://ctf.ssleye.com/">http://ctf.ssleye.com/</a></li><li><a href="https://tool.oschina.net/">https://tool.oschina.net/</a></li><li><a href="http://www.atoolbox.net/Category.php?Id=27">http://www.atoolbox.net/Category.php?Id=27</a></li><li><a href="https://ctf.bugku.com/tools">https://ctf.bugku.com/tools</a></li></ol><h1 id="Base加密"><a href="#Base加密" class="headerlink" title="Base加密"></a>Base加密</h1><ol><li>Base64</li></ol><p>特征：</p><p>(1)标准base64只有64个字符（英文大小写、数字和+、&#x2F;）以及用作后缀等号<br>(2)经过base64编码后的字符串长度一定会被4整除（包括后缀等号）<br>(3)等号用作后缀，且数目一定是0个、1个或2个。这是因为如果原文长度不能被3整除，base64要在后面添加\0凑齐3n位。为了正确还原，添加了几个\0就加上几个等号。添加等号的数目只能是0、1或2</p><p>例如：</p><pre><code class="hljs">flag&#123;this_is_a_flag&#125;加密后：ZmxhZ3t0aGlzX2lzX2FfZmxhZ30=</code></pre><p>解密：</p><p>（1）在线工具：<a href="https://tool.oschina.net/encrypt?type=3">https://tool.oschina.net/encrypt?type=3</a></p><p>（2）python解密：<br>    import　base64<br>    print base64 decodestring(‘xxxxxxxx’)</p><ol><li>Base32</li></ol><p>特征：<br>只有大写字母A-Z和数字234567 </p><p>例如：</p><pre><code class="hljs">flag&#123;this_is_a_flag&#125;加密后：MZWGCZ33ORUGS427NFZV6YK7MZWGCZ35</code></pre><p>解密：<br>在线工具：<a href="http://www.atoolbox.net/Tool.php?Id=931">http://www.atoolbox.net/Tool.php?Id=931</a></p><ol><li>Base16</li></ol><p>特征：<br>只有大写字母ABCDEF和数字0-9</p><p>例如：<br>    flag{this_is_a_flag}<br>    加密后：<br>    666C61677B746869735F69735F615F666C61677D</p><p>解密：<br>在线工具：<a href="http://www.atoolbox.net/Tool.php?Id=930">http://www.atoolbox.net/Tool.php?Id=930</a></p><ol><li>Base100</li></ol><p>特征：？</p><p>例如：</p><pre><code class="hljs">flag&#123;this_is_a_flag&#125;加密后：👝👣👘👞👲👫👟👠👪👖👠👪👖👘👖👝👣👘👞👴</code></pre><ol><li>Base64图片加密</li></ol><p>特征：<br>（1）一般来说非常的长。因为图片一般来说比较大（<br>（2）以“data:image&#x2F;jpeg;base64,********************”开头，里面的jpeg是文件格式，也可以是png什么的</p><p>解密：<br>在线解密：<a href="http://www.jsons.cn/img2base64/">http://www.jsons.cn/img2base64/</a></p><ol><li>其他：<br>比如Base92、91、85、62、58等等</li></ol><h1 id="古典密码"><a href="#古典密码" class="headerlink" title="古典密码"></a>古典密码</h1><ol><li>凯撒密码</li></ol><p>特征：<br>（1）符号不会变。<br>（2）是一种替换加密的技术，明文中的所有字母都在字母表上向后（或向前）按照一个固定数目进行偏移后被替换成密文。例如，当偏移量是3的时候，所有的字母A将被替换成D，B变成E，以此类推。</p><p>例如：</p><pre><code class="hljs">flag&#123;this_is_a_flag&#125;偏移量为5 加密后：kqfl&#123;ymnx_nx_f_kqfl&#125;</code></pre><p>解密：<br>在不确定偏移量的情况下，可以遍历，然后找里面有比如“***ctf”这种关键字。<br>在线解密：<a href="https://ctf.bugku.com/tool/caesar">https://ctf.bugku.com/tool/caesar</a></p><p>衍生——维吉尼亚密码<br>在线解密：<a href="https://ctf.bugku.com/tool/vigenere">https://ctf.bugku.com/tool/vigenere</a></p><ol><li>栅栏密码</li></ol><p>所谓栅栏密码，就是把要加密的明文分成N个一组，然后把每组的第1个字连起来，形成一段无规律的话。 不过栅栏密码本身有一个潜规则，就是组成栅栏的字母一般不会太多。（一般不超过30个，也就是一、两句话）<br>栅栏密码的加密首先把将要传递的信息中的字母交替排成上下两行，然后将下面一行字母排在上面一行的后边，从而形成一段密码。</p><p>例如：</p><pre><code class="hljs">flag&#123;this_is_a_flag&#125;栏数5 加密后：ftiflhslai_agsag&#123;__&#125;</code></pre><p>解密：<br>在不确定栏数的情况下，可以尝试遍历，然后找关键字。<br>在线解密：<a href="https://ctf.bugku.com/tool/railfence">https://ctf.bugku.com/tool/railfence</a></p><ol><li>Uuencode密码</li></ol><p>Uuencode将输入文字以每三个字节为单位进行编码，如此重复进行。如果最后剩下的文字少于三个字节，不够的部份用零补齐。这三个字节共有24个Bit，以6-bit为单位分为4个群组，每个群组以十进制来表示所出现的数值只会落在0到63之间。将每个数加上32，所产生的结果刚好落在ASCII字符集中可打印字符（32-空白…95-底线）的范围之中。</p><p>Uuencode编码每60个将输出为独立的一行（相当于45个输入字节），每行的开头会加上长度字符，除了最后一行之外，长度字符都应该是“M”这个ASCII字符（77&#x3D;32+45），最后一行的长度字符为32+剩下的字节数目这个ASCII字符。</p><p>例如：</p><pre><code class="hljs">flag&#123;this_is_a_flag&#125;加密后：49FQA9WMT:&amp;ES7VES7V%?9FQA9WT``</code></pre><p>解密：<br>在线解密：<a href="https://www.qqxiuzi.cn/bianma/uuencode.php">https://www.qqxiuzi.cn/bianma/uuencode.php</a></p><ol><li>XXencode密码</li></ol><p>XXencode将输入文本以每三个字节为单位进行编码。如果最后剩下的资料少于三个字节，不够的部份用零补齐。这三个字节共有24个Bit，以6bit为单位分为4个组，每个组以十进制来表示所出现的数值只会落在0到63之间。以所对应值的位置字符代替。它所选择的可打印字符是：+-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz，一共64个字符。跟base64打印字符相比，就是uuencode多一个“-” 字符，少一个”&#x2F;” 字符。 但是，它里面字符顺序与Base64完全不一样。与UUencode比较，这里面所选择字符，都是常见字符，没有特殊字符。<br>每60个编码输出（相当于45个输入字节）将输出为独立的一行，每行的开头会加上长度字符，除了最后一行之外，长度字符都应该是“h”这个字符（45，刚好是64字符中，第45位’h’字符），最后一行的长度字符为剩下的字节数目 在64字符中位置所代表字符。</p><p>例如：</p><pre><code class="hljs">flag&#123;this_is_a_flag&#125;加密后：INalVNrhoO4ZnLqZnLq3TNalVNro+</code></pre><p>解密：<br>在线解密：<a href="http://web.chacuo.net/charsetxxencode">http://web.chacuo.net/charsetxxencode</a></p><h1 id="散列-哈希算法"><a href="#散列-哈希算法" class="headerlink" title="散列&#x2F;哈希算法"></a>散列&#x2F;哈希算法</h1><p>Hash，音译“哈希”，一般翻译做“散列”，把任意长度的数据作为输入，然后通过Hash散列算法得到一个固定长度的输出值，该输出值就是散列值，它是一种数据压缩映射关系。 简单来说就是将做任意长度的消息压缩到某一固定长度的消息摘要的函数。</p><p>常见的算法有SHA1、SHA224、SHA256、SHA384、SHA512和MD5等。<br>而HmacSHA1、HmacSHA224、HmacSHA256、HmacSHA384、HmacSHA512、HmacMD5是需要密码的，PBKDF2需要提供key长度、盐值和迭代次数。解题时可根据已知条件选择合适的算法。</p><p>例如：</p><pre><code class="hljs">flag&#123;this_is_a_flag&#125;MD5加密后：b0f8f148cb330680b30f8d1df37d12d4</code></pre><p>解密：<br>在线解密：<a href="https://tool.oschina.net/encrypt?type=2">https://tool.oschina.net/encrypt?type=2</a></p><h1 id="RSA加密"><a href="#RSA加密" class="headerlink" title="RSA加密"></a>RSA加密</h1><p>RSA算法，它通常是先生成一对RSA密钥，其中之一是保密密钥，由用户保存；另一个为公开密钥，可对外公开，甚至可在网络服务器中注册。为提高保密强度，RSA密钥至少为500位长，一般推荐使用1024位。这就使加密的计算量很大。为减少计算量，在传送信息时，常采用传统加密方法与公开密钥加密方法相结合的方式，即信息采用改进的DES或IDEA对话密钥加密，然后使用RSA密钥加密对话密钥和信息摘要。对方收到信息后，用不同的密钥解密并可核对信息摘要。<br>RSA公开密钥密码体制的原理是：根据数论，寻求两个大素数比较简单，而将它们的乘积进行因式分解却极其困难，因此可以将乘积公开作为加密密钥 。</p><p>在线解密：<a href="http://tools.jb51.net/password/rsa_encode/">http://tools.jb51.net/password/rsa_encode&#x2F;</a></p><p>对文件批量RSA加密的例题：<a href="https://mrcx-personal.gitee.io/2021/01/30/adworld-wp-Mysterious-GIF/">https://mrcx-personal.gitee.io/2021/01/30/adworld-wp-Mysterious-GIF/</a></p><h1 id="非正常（？）编码"><a href="#非正常（？）编码" class="headerlink" title="非正常（？）编码"></a>非正常（？）编码</h1><p>这种密码方式比较特殊，加密之后的结果有时候连它是密码都看不出来。</p><ul><li>brainfuck：</li></ul><p>由+-&lt;&gt;[]组成的一串字符。<br>例题：<a href="https://mrcx-personal.gitee.io/2020/12/02/adworld-wp-can_has_stdio/">https://mrcx-personal.gitee.io/2020/12/02/adworld-wp-can_has_stdio&#x2F;</a><br>在线解密：<a href="http://ctf.ssleye.com/brain.html">http://ctf.ssleye.com/brain.html</a></p><ul><li>jsfuck：</li></ul><p>由6个字符<a href=""></a>!+ 来编写的JavaScript程序<br>在线解密：<a href="https://www.sojson.com/jsjiemi.html">https://www.sojson.com/jsjiemi.html</a><br>当然也可以直接复制到浏览器的控制台上跑一遍，它就会自己执行了。</p><ul><li>rockstar</li></ul><p>读起来像是一首诗（？）<br>例题：<a href="https://adworld.xctf.org.cn/task/answer?type=misc&number=1&grade=1&id=5498">https://adworld.xctf.org.cn/task/answer?type=misc&number=1&grade=1&id=5498</a><br>该语言的GitHub页面：<a href="https://github.com/RockstarLang/rockstar">https://github.com/RockstarLang/rockstar</a><br>GitHub上面有相关的文档和python脚本，可供使用。</p><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>比如Unicode、URL、进制转换等等：</p><p>在线解密：站长之家：<a href="http://tool.chinaz.com/tools/unicode.aspx">http://tool.chinaz.com/tools/unicode.aspx</a><br>bugku工具箱：<a href="https://ctf.bugku.com/tools">https://ctf.bugku.com/tools</a></p>]]></content>
     
@@ -175,8 +175,8 @@
   
   <entry>
     <title>CTF学习笔记-Bugku 社工-初步收集</title>
-    <link href="/project/2021/04/10/bugku-wp-collect1/"/>
-    <url>/project/2021/04/10/bugku-wp-collect1/</url>
+    <link href="/2021/04/10/bugku-wp-collect1/"/>
+    <url>/2021/04/10/bugku-wp-collect1/</url>
     
     <content type="html"><![CDATA[<ul><li>题目名称：社工-初步收集</li><li>题目来源：？</li><li>题目类型：WEB、逆向</li></ul><hr><p>  <escape><span id="more"></span></escape></p><ul><li>题目链接：<a href="https://ctf.bugku.com/challenges/detail/id/187.html" title="https://ctf.bugku.com/challenges/detail/id/187.html">https://ctf.bugku.com/challenges/detail/id/187.html</a></li><li>关键词：WEB、逆向、社工</li></ul><p><img src="https://i.loli.net/2021/04/10/yCoXJaBZSF4MfRH.jpg" alt="社工-初步收集-page-001.jpg"></p><p><img src="https://i.loli.net/2021/04/10/3s5w2XRZBezpkSf.jpg" alt="社工-初步收集-page-002.jpg"></p><p><img src="https://i.loli.net/2021/04/10/gJRFIxuY7EAhKSl.jpg" alt="社工-初步收集-page-003.jpg"></p><p><img src="https://i.loli.net/2021/04/10/5dEqLZQGVwXsNvg.jpg" alt="社工-初步收集-page-004.jpg"></p>]]></content>
     
@@ -204,8 +204,8 @@
   
   <entry>
     <title>CTF学习笔记-攻防世界WP Mysterious-GIF</title>
-    <link href="/project/2021/01/30/adworld-wp-Mysterious-GIF/"/>
-    <url>/project/2021/01/30/adworld-wp-Mysterious-GIF/</url>
+    <link href="/2021/01/30/adworld-wp-Mysterious-GIF/"/>
+    <url>/2021/01/30/adworld-wp-Mysterious-GIF/</url>
     
     <content type="html"><![CDATA[<ul><li>题目名称：Mysterious-GIF</li><li>题目来源：breakin-ctf-2017</li><li>题目类型：MISC</li></ul><hr><p>  <escape><span id="more"></span></escape></p><ul><li>题目链接：<a href="https://adworld.xctf.org.cn/task/answer?type=misc&number=1&grade=1&id=5557&page=6" title="https://adworld.xctf.org.cn/task/answer?type=misc&amp;number=1&amp;grade=1&amp;id=5557&amp;page=6">https://adworld.xctf.org.cn/task/answer?type=misc&number=1&grade=1&id=5557&page=6</a></li><li>关键词：图片隐写、binwalk</li></ul><p><img src="https://i.loli.net/2021/01/31/FjrOkQ5S4GEDHdJ.jpg" alt="wp-page-001.jpg"><br><img src="https://i.loli.net/2021/01/31/mTXsq24r9V1v7Bh.jpg" alt="wp-page-002.jpg"><br><img src="https://i.loli.net/2021/01/31/5prlO1aVtXTfJkD.jpg" alt="wp-page-003.jpg"><br><img src="https://i.loli.net/2021/01/31/l42x7PQpsMRjSnf.jpg" alt="wp-page-004.jpg"><br><img src="https://i.loli.net/2021/01/31/fJz81wjTDeYEl7x.jpg" alt="wp5-page-001.jpg"><br><img src="https://i.loli.net/2021/01/31/C7fjhdV1PwbaiOQ.png" alt="image.png"><br><img src="https://i.loli.net/2021/01/31/7dzrVawDGAufjmB.png" alt="image.png"></p><p>看别的大佬另一种解法：<br>用python脚本直接解密+合成</p><p>所用到脚本如下：</p><pre><code class="hljs">    # coding=utf-8    import os    import Crypto.PublicKey.RSA    import Crypto.Cipher.PKCS1_v1_5    path = r&quot;C:\Users\USER\Desktop\CTF-TEMP\_temp.zip.extracted&quot;    # 读取所有文件    file = [name for name in os.listdir(path)]    flag = b&#39;&#39;    # 载入私钥    cipher = Crypto.Cipher.PKCS1_v1_5.new(Crypto.PublicKey.RSA.importKey(open(r&#39;C:\Users\USER\Desktop\CTF-TEMP\key.key&#39;,&#39;rb&#39;).read()))    for fi in file:    message = open(os.path.join(path,fi),&#39;rb&#39;).read()    flag += cipher.decrypt(message,b&#39;rsa&#39;)    open(r&#39;C:\Users\USER\Desktop\CTF-TEMP\out&#39;,&#39;wb&#39;).write(flag)</code></pre><p>我也尝试了一下这种方法，确实更佳高效。但是关于Python的“Crypto”这个库，直接pip install crypto会报错，查资料有很多说用pycrypto的，我试了试也是报错。最后找到了“pycryptodome”这个库，成功安装。</p>]]></content>
     
@@ -231,8 +231,8 @@
   
   <entry>
     <title>CTF学习笔记-攻防世界WP 心仪的公司</title>
-    <link href="/project/2020/12/12/adworld-wp-working/"/>
-    <url>/project/2020/12/12/adworld-wp-working/</url>
+    <link href="/2020/12/12/adworld-wp-working/"/>
+    <url>/2020/12/12/adworld-wp-working/</url>
     
     <content type="html"><![CDATA[<ul><li>题目名称：心仪的公司</li><li>题目来源：世安杯</li><li>题目类型：MISC</li></ul><hr><p>  <escape><span id="more"></span></escape></p><ul><li>题目链接：</li><li>关键词：wireshark</li></ul><p>这个题有两种解法，一种是官方的题解，比较复杂（其实是我菜），如下图。</p><div align="center">    <img src="https://i.loli.net/2020/12/13/QIvSzifwpxt4MDc.png" style="zoom:70%" align=center /></div><p>还有一种方法如下，具有投机取巧的成分，但是在一定情况下还算好用。</p><p>先想到flag里面一般有“{”这个字符串。<br>然后linux里面有一条strings命令，可用于搜索字符串。</p><p>strings “文件名” | grep “字符串”</p><p>（实际使用时不用加双引号）</p><p>拖入kali，搜索，得到flag。</p><div align="center">    <img src="https://i.loli.net/2020/12/13/x1BotSq4yVgG8ba.png" style="zoom:70%" align=center /></div><p>关于strings的用法说明</p><p>语法</p><p>strings [ -a ] [ - ] [ -o ] [ -t Format ] [ -n Number ] [ -Number ] [ file … ]</p><p>选项<br>-a –all：扫描整个文件而不是只扫描目标文件初始化和装载段<br>-f –print-file-name：在显示字符串前先显示文件名<br>-n –bytes&#x3D;[number]：找到并且输出所有NUL终止符序列</p><ul><li>：设置显示的最少的字符数，默认是4个字符<br>-t –radix&#x3D;{o,d,x} ：输出字符的位置，基于八进制，十进制或者十六进制<br>-o ：类似–radix&#x3D;o<br>-T –target&#x3D; ：指定二进制文件格式<br>-e –encoding&#x3D;{s,S,b,l,B,L} ：选择字符大小和排列顺序:s &#x3D; 7-bit, S &#x3D; 8-bit, {b,l} &#x3D; 16-bit, {B,L} &#x3D; 32-bit<br>@ ：读取中选项</li></ul>]]></content>
     
@@ -258,8 +258,8 @@
   
   <entry>
     <title>CTF学习笔记-攻防世界WP wireshark-1</title>
-    <link href="/project/2020/12/10/adworld-wp-wireshark-1/"/>
-    <url>/project/2020/12/10/adworld-wp-wireshark-1/</url>
+    <link href="/2020/12/10/adworld-wp-wireshark-1/"/>
+    <url>/2020/12/10/adworld-wp-wireshark-1/</url>
     
     <content type="html"><![CDATA[<ul><li>题目名称：wireshark-1</li><li>题目来源：广西首届网络安全选拔赛</li><li>题目类型：MISC</li></ul><hr><p>  <escape><span id="more"></span></escape></p><ul><li>题目链接：<a href="https://adworld.xctf.org.cn/task/answer?type=misc&number=1&grade=1&id=5468" title="https://adworld.xctf.org.cn/task/answer?type=misc&amp;number=1&amp;grade=1&amp;id=5468">https://adworld.xctf.org.cn/task/answer?type=misc&number=1&grade=1&id=5468</a></li><li>关键词：wireshark</li></ul><p>这是做到的第一个wireshark的题。。于是我便把他记下来了。</p><p>突然发现直接粘pdf会很省时间，随用之。</p><div align="center">    <img src="https://i.loli.net/2020/12/13/RYeQZpOF469iL7c.jpg" style="zoom:40%" align=center />    <img src="https://i.loli.net/2020/12/13/zBmprRQ9Lj1D4eS.jpg" style="zoom:40%" align=center /></div>]]></content>
     
@@ -285,8 +285,8 @@
   
   <entry>
     <title>CTF学习笔记-攻防世界WP can_has_stdio?</title>
-    <link href="/project/2020/12/02/adworld-wp-can_has_stdio/"/>
-    <url>/project/2020/12/02/adworld-wp-can_has_stdio/</url>
+    <link href="/2020/12/02/adworld-wp-can_has_stdio/"/>
+    <url>/2020/12/02/adworld-wp-can_has_stdio/</url>
     
     <content type="html"><![CDATA[<ul><li>题目名称：can_has_stdio?</li><li>题目来源：tinyctf-2014</li><li>题目类型：MISC</li></ul><hr><p>  <escape><span id="more"></span></escape></p><ul><li>题目链接：<a href="https://adworld.xctf.org.cn/task/answer?type=misc&number=1&grade=1&id=4754" title="https://adworld.xctf.org.cn/task/answer?type=misc&amp;number=1&amp;grade=1&amp;id=4754">https://adworld.xctf.org.cn/task/answer?type=misc&number=1&grade=1&id=4754</a></li><li>关键词：brainfuck</li></ul><p>下载附件，得到一个文件。<br>没有后缀名，直接用记事本打开</p><p>发现有一个大星星ヾ(•ω•&#96;)o</p><div align="center">    <img src="https://i.loli.net/2020/12/02/eDHz6ik3pvF2VBL.png" style="zoom:50%" align=center /></div><p>毫无头绪。。。<br>遂去查WP，得知这个是一种叫做”brainfuck“的语言。<br>用在线解密工具解密，得到flag</p><div align="center">    <img src="https://i.loli.net/2020/12/02/8x6r5O47HYM3o92.png" style="zoom:60%" align=center /></div><p>flag：</p><pre><code class="hljs">flag&#123;esolangs_for_fun_and_profit&#125;</code></pre><p>又是一个新的知识点呢。。</p><p>附在线解密网站：<a href="http://ctf.ssleye.com/brain.html" title="http://ctf.ssleye.com/brain.html">http://ctf.ssleye.com/brain.html</a></p>]]></content>
     
@@ -312,8 +312,8 @@
   
   <entry>
     <title>冰菓 Hyouka 米泽穗信 资源共享</title>
-    <link href="/project/2020/12/01/hyouka20201208/"/>
-    <url>/project/2020/12/01/hyouka20201208/</url>
+    <link href="/2020/12/01/hyouka20201208/"/>
+    <url>/2020/12/01/hyouka20201208/</url>
     
     <content type="html"><![CDATA[<p>冰菓-Hyouka-[日]米泽穗信</p><p>分类 轻小说、校园、推理、恋爱</p><p>更新日期 2020-12-08</p><hr><p>  <escape><span id="more"></span></escape></p><p>作品详情：<a href="https://zh.moegirl.org.cn/zh-hans/%E5%86%B0%E8%8F%93" title="https://zh.moegirl.org.cn/zh-hans/%E5%86%B0%E8%8F%93">https://zh.moegirl.org.cn/zh-hans/%E5%86%B0%E8%8F%93</a></p><p>同名番剧链接：[bilibili]<a href="https://www.bilibili.com/bangumi/play/ss3398/" title="https://www.bilibili.com/bangumi/play/ss3398/">https://www.bilibili.com/bangumi/play/ss3398/</a></p><p>下载链接：<a href="https://pan.baidu.com/s/1uMOiuCfoiJvnm_9UHQTv0Q" title="https://pan.baidu.com/s/1uMOiuCfoiJvnm_9UHQTv0Q ">https://pan.baidu.com/s/1uMOiuCfoiJvnm_9UHQTv0Q </a></p><p>文件列表：</p><div align="center">    <img src="https://i.loli.net/2020/12/13/aDVCvh7J5qjPXGp.png" style="zoom:100%" align=center /></div><p>提取码：5678</p><p>解压密码是无</p><p>整理来源于网络。</p><p>本人只是转载和整理，对本资源没有任何担保，使用时请遵循相关法律法规，仅供学习使用，同时注意个人信息和设备的安全。</p>]]></content>
     
@@ -339,8 +339,8 @@
   
   <entry>
     <title>CTF学习笔记-攻防世界WP 签到题</title>
-    <link href="/project/2020/11/29/adworld-wp-login/"/>
-    <url>/project/2020/11/29/adworld-wp-login/</url>
+    <link href="/2020/11/29/adworld-wp-login/"/>
+    <url>/2020/11/29/adworld-wp-login/</url>
     
     <content type="html"><![CDATA[<ul><li>题目名称：签到题</li><li>题目来源：SSCTF-2017</li><li>题目类型：MISC</li></ul><hr><p>  <escape><span id="more"></span></escape></p><ul><li>题目链接：<a href="https://adworld.xctf.org.cn/task/answer?type=misc&number=1&grade=1&id=4977" title="https://adworld.xctf.org.cn/task/answer?type=misc&amp;number=1&amp;grade=1&amp;id=4977">https://adworld.xctf.org.cn/task/answer?type=misc&number=1&grade=1&id=4977</a></li><li>关键词：base64、凯撒密码、栅栏密码</li></ul><p>先看题干</p><blockquote><p>SSCTF线上选举美男大赛开始了，泰迪拿着他的密码去解密了，提交花括号内内容（Z2dRQGdRMWZxaDBvaHRqcHRfc3d7Z2ZoZ3MjfQ&#x3D;&#x3D;）</p></blockquote><p>不用想，后面的字符串肯定是和flag有关的。<br>判断是一串base64，复制然后解密</p><p>但是好像并没有什么用</p><div align="center">    <img src="https://i.loli.net/2020/11/29/mWwTQSc3a4CBe6I.png" style="zoom:100%" align=center /></div><p>显然还不够，继续解。<br>使用 栅栏密码</p><p>收效甚微</p><div align="center">    <img src="https://i.loli.net/2020/11/29/6EUzZwkq1K3tpCG.png" style="zoom:100%" align=center /></div><p>快了快了<br>使用 凯撒加密</p><p>效果拔群</p><div align="center">    <img src="https://i.loli.net/2020/11/29/1oX5gjaF3NkdcwY.png" style="zoom:70%" align=center /></div>得到flag]]></content>
     
@@ -368,8 +368,8 @@
   
   <entry>
     <title>CTF学习笔记-攻防世界WP 信号不好先挂了</title>
-    <link href="/project/2020/11/25/adworld-wp-nosignal/"/>
-    <url>/project/2020/11/25/adworld-wp-nosignal/</url>
+    <link href="/2020/11/25/adworld-wp-nosignal/"/>
+    <url>/2020/11/25/adworld-wp-nosignal/</url>
     
     <content type="html"><![CDATA[<ul><li>题目名称：信号不好先挂了</li><li>题目来源：UNCTF-2019</li><li>题目类型：MISC</li></ul><hr><p>  <escape><span id="more"></span></escape></p><ul><li>题目链接：<a href="https://adworld.xctf.org.cn/task/answer?type=misc&number=1&grade=1&id=5552" title="https://adworld.xctf.org.cn/task/answer?type=misc&amp;number=1&amp;grade=1&amp;id=5552">https://adworld.xctf.org.cn/task/answer?type=misc&number=1&grade=1&id=5552</a></li><li>关键词：文件操作、图片隐写、盲水印</li></ul><p>下载附件，看到这样一张图片。</p><div align="center">    <img src="https://i.loli.net/2020/11/28/6Pd9yvfAVTriEWk.png" style="zoom:60%" align=center />    <p>文件名：apple.png</p></div><p>emmmm。。。一个表情包？<br>先用二进制查看器看一下，没有什么明显的线索。</p><p>遂直接扔进Stegslove。</p><div align="center">    <img src="https://i.loli.net/2020/11/28/lBy7wbpuY4XsNAG.png" style="zoom:60%" align=center /></div>感觉里面有些东西。（废话）<p>解LSB隐写，发现文件。</p><div align="center">    <img src="https://i.loli.net/2020/11/28/a5VYPtM9xN4G3JC.png" style="zoom:70%" align=center /></div>文件头是“PK...”，疑似zip文件。<p>保存为zip，发现里面是另一张图片。</p><div align="center">    <img src="https://i.loli.net/2020/11/28/7mHdzRX3YwATZMt.png" style="zoom:70%" align=center />    <p>新的文件名：pen.png</p></div>两张图片内容看起来一样。<div align="center">    <img src="https://i.loli.net/2020/11/28/GjOAQBWhYo3Dc8x.png" style="zoom:70%" align=center /></div>想到了什么？<blockquote><p>i have a pen<br>I have an apple<br>uh!<br>apple pen</p></blockquote><div align="center">    <img src="https://i.loli.net/2020/11/28/jV84PBONwxULYuz.png" style="zoom:60%" align=center /></div><p>对了，就是图片盲水印！[滑稽]</p><p>我们需要把apple和pen“放在一起”。</p><pre><code class="hljs">python bwm3.py decode apple.png pen.png flag.png</code></pre><p>成功得到flag。</p><pre><code class="hljs">unctf&#123;9d0649505b702643&#125;</code></pre><p>解盲水印的python代码可以在GitHub上下载，需要opencv库。具体看GitHub相关页面。</p><p><a href="https://github.com/chishaxie/BlindWaterMark" title="https://github.com/chishaxie/BlindWaterMark">https://github.com/chishaxie/BlindWaterMark</a></p>]]></content>
     
@@ -395,8 +395,8 @@
   
   <entry>
     <title>CTF学习笔记-攻防世界WP 再见李华</title>
-    <link href="/project/2020/11/23/adworld-wp-LiHua/"/>
-    <url>/project/2020/11/23/adworld-wp-LiHua/</url>
+    <link href="/2020/11/23/adworld-wp-LiHua/"/>
+    <url>/2020/11/23/adworld-wp-LiHua/</url>
     
     <content type="html"><![CDATA[<ul><li>题目名称：再见李华</li><li>题目来源：ISCC-2017</li><li>题目类型：MISC</li></ul><hr><p>  <escape><span id="more"></span></escape></p><ul><li>题目链接：<a href="https://adworld.xctf.org.cn/task/answer?type=misc&number=1&grade=1&id=4927" title="https://adworld.xctf.org.cn/task/answer?type=misc&amp;number=1&amp;grade=1&amp;id=4927">https://adworld.xctf.org.cn/task/answer?type=misc&number=1&grade=1&id=4927</a></li><li>关键词：文件操作、图片隐写、密码破译</li></ul><p>下载附件，是一个压缩包，里面是个图片。</p><div align="center">    <img src="https://i.loli.net/2020/11/29/k2P6yVGIp3MNJ5e.png" style="zoom:80%" align=center /></div><p>导入二进制查看器，发现里面有个txt文件。</p><div align="center">    <img src="https://i.loli.net/2020/11/29/YOkD6S8QCAtazvf.png" style="zoom:100%" align=center /></div><p>把文件分离之后得到一个压缩包，里面是key.txt，需要密码。</p><div align="center">    <img src="https://i.loli.net/2020/11/29/MiALUBH8KfIJN27.png" style="zoom:70%" align=center /></div><p>这时候看题干。</p><blockquote><p>假如你是李华（LiHua)，收到乔帮主一封密信，没有任何特殊字符，请输入密码，不少于1000个字。同学，记得署名哦～</p></blockquote><p>这里需要脑洞一波。。。<br>“没有特殊字符”，是指密码中没有特殊字符。而不少于“1000”个字，8的二进制是1000，所以密码位数大于等于8.“记得署名”，意思是密码中后面5个字是LiHua，最后用ACHPR进行破解。 最后密码为15CCLiHua，得到flag。</p><div align="center">    <img src="https://i.loli.net/2020/11/29/QJermdwD56FnZ1z.png" style="zoom:100%" align=center /></div><p>其实如果用7-Zip打开这个图片的话，可以直接看到那个压缩包，不需要再分离文件了。</p><div align="center">    <img src="https://i.loli.net/2020/11/29/QlqrBxzdhK1LWVJ.png" style="zoom:90%" align=center /></div>]]></content>
     
@@ -422,8 +422,8 @@
   
   <entry>
     <title>Adobe CC 2020 全系列 资源共享</title>
-    <link href="/project/2020/11/21/adobe20201005/"/>
-    <url>/project/2020/11/21/adobe20201005/</url>
+    <link href="/2020/11/21/adobe20201005/"/>
+    <url>/2020/11/21/adobe20201005/</url>
     
     <content type="html"><![CDATA[<p>Adobe Creative Cloud 2020 全家桶分装版，可以按需下载。</p><p>更新日期 2020-10-05</p><hr><p>  <escape><span id="more"></span></escape></p><p>下载链接：<a href="https://pan.baidu.com/s/1IrA-Mq_hvPVRuve2RO6kJg" title="https://pan.baidu.com/s/1IrA-Mq_hvPVRuve2RO6kJg">https://pan.baidu.com/s/1IrA-Mq_hvPVRuve2RO6kJg</a></p><p>提取码：1234</p><p>解压密码是“@vposy”</p><p>安装时需要断网。</p><p>整理：MRCX</p><p>提供：@vposy</p><p>放到这里，本来是方便自己寻找备份的，一想有不少论坛什么的用这种破解者免费向大家提供的资源来获利，便放到这里供大家下载。</p><p>本人只是转载和整理，对本资源没有任何担保，使用时请遵循相关法律法规，同时注意个人信息和设备的安全。</p>]]></content>
     
@@ -451,8 +451,8 @@
   
   <entry>
     <title>CTF学习笔记-攻防世界WP ext3</title>
-    <link href="/project/2020/11/20/adworld-wp-ext3/"/>
-    <url>/project/2020/11/20/adworld-wp-ext3/</url>
+    <link href="/2020/11/20/adworld-wp-ext3/"/>
+    <url>/2020/11/20/adworld-wp-ext3/</url>
     
     <content type="html"><![CDATA[<ul><li>题目名称：ext3</li><li>题目来源：bugku</li><li>题目类型：MISC</li></ul><hr><p>  <escape><span id="more"></span></escape></p><ul><li>题目链接：<a href="https://adworld.xctf.org.cn/task/answer?type=misc&number=1&grade=0&id=5098" title="https://adworld.xctf.org.cn/task/answer?type=misc&amp;number=1&amp;grade=0&amp;id=5098">https://adworld.xctf.org.cn/task/answer?type=misc&number=1&grade=0&id=5098</a></li><li>关键词：文件操作、Linux、base64</li></ul><p>（这题其实有2种解法，一种正常的，另一种比较水）</p><p>首先看题目名称“ext3”和题目描述 “今天是菜狗的生日，他收到了一个linux系统光盘”，猜测这题考察Linux挂载和文件读取、搜索等。</p><p>下载附件，没法直接看出来是个什么东西。</p><div align="center">    <img src="https://i.loli.net/2020/11/27/1OuCPcvpNx4Weyi.png" style="zoom:100%" align=center /></div><p>尝试在Linux上挂载。</p><div align="center">    <img src="https://i.loli.net/2020/11/27/jbA8pJZwlKU61fd.png" style="zoom:100%" align=center /></div><p>发现是很多文件夹和文件</p><p>尝试搜索flag</p><div align="center">    <img src="https://i.loli.net/2020/11/27/mNF9dcHOguCWhiY.png" style="zoom:100%" align=center /></div><p>找到了，用cat命令获取了文件内容，是一串base64字符</p><div align="center">    <img src="https://i.loli.net/2020/11/27/Tm5R6nVz7v21YOi.png" style="zoom:100%" align=center /></div>解密得到flag。<p>还有一种方法，操作极为简单。那就是。。。。。<br>直接用记事本打开这个文档，搜索flag。。。<br>如下图：</p><div align="center">    <img src="https://i.loli.net/2020/11/27/XkNvLihJgPQ5wHM.jpg" style="zoom:100%" align=center /></div><p>得到base64，然后解密得到flag。</p>]]></content>
     
@@ -478,8 +478,8 @@
   
   <entry>
     <title>QUST-SEC MISC方向的一些WP（二）</title>
-    <link href="/project/2020/11/01/qust-sec-WP2/"/>
-    <url>/project/2020/11/01/qust-sec-WP2/</url>
+    <link href="/2020/11/01/qust-sec-WP2/"/>
+    <url>/2020/11/01/qust-sec-WP2/</url>
     
     <content type="html"><![CDATA[<p>书接上回。本文记录青岛科技大学华为杯CTF 6~11题的WP</p><p><escape><span id="more"></span></escape></p><ol start="6"><li>misc6 二维码</li></ol><p><strong>关键词：二维码</strong></p><ol start="7"><li>misc7 easy_dump</li></ol><p><strong>关键词：内存取证、NTSC数据流</strong></p><ol start="8"><li>misc8 拼图</li></ol><p><strong>关键词：？</strong></p><ol start="9"><li>misc9 winter</li></ol><p>下载附件，是一张图片</p><p>根据意义，想到用 our secret工具解密。<br>将图片导入工具，再联系题干，密码是winter，解密成功，得到新的附件地址。下载新的附件，是一个文本文档。<br>里面以空格和tap为主要内容，联系里面的文本，联想到snow加密。<br>解密得到flag。</p><p><strong>关键词：oursecret、snow加密</strong></p><ol start="10"><li>misc10 孤寡孤寡<br>下载附件，是一群青蛙（雾）</li></ol><p>仔细观察，发现排列有规律，是个二维码，尺寸29*29<br>导入PS，调整图片大小，重新采样选“临近”，得到正常的二维码，扫描，得到一串”祝福”<br>根据题目提示，得到”祝福”的MD5值，即为该题的flag</p><p><strong>关键词：二维码</strong></p><ol start="11"><li>misc11 blind</li></ol><p><strong>关键词：盲水印、图片隐写</strong></p>]]></content>
     
@@ -505,8 +505,8 @@
   
   <entry>
     <title>QUST-SEC MISC方向的一些WP（一）</title>
-    <link href="/project/2020/10/31/qust-sec-WP/"/>
-    <url>/project/2020/10/31/qust-sec-WP/</url>
+    <link href="/2020/10/31/qust-sec-WP/"/>
+    <url>/2020/10/31/qust-sec-WP/</url>
     
     <content type="html"><![CDATA[<p>这次比赛MISC方向一共有11道题，好几道没做出来的（好菜啊quq）。。<br>那我就按照顺序，根据自己的理解和官方的WP把所有的MISC题理一遍吧，也是个学习的过程。。</p><hr><p><escape><span id="more"></span></escape></p><ol><li><p>misc1 checkin<br>签到题，直接复制粘贴，得到flag。</p><p> </p><p> </p></li><li><p>misc2 套娃<br>下载附件，发现是个压缩包，提示密码是出题人生日。 然后用ARCHPR跑字典，跑出来是20001228，解压出来又一个压缩包和一张图片。</p><div align="center"> <img src="https://i.loli.net/2020/11/26/QcSEitx3JDsLkNh.png" style="zoom:60%" align=center /></div>打开2.zip，发现其中也有一个fakeflag.jpg，和未加密的文件名一样，推测是CRC32碰撞，明文攻击。验证发现两者CRC32确实相同。<div align="center"> <img src="https://i.loli.net/2020/11/26/hQoK9g5rDpIOSdU.png" style="zoom:60%" align=center /></div>（在这里就卡住了，我用ACHPR进行明文攻击总是报错，故这个题没有完全解出来）下面的转自官方WP<div align="center"> <img src="https://i.loli.net/2020/11/26/okXdUhxw8QgLYvA.png" style="zoom:80%" align=center /> <img src="https://i.loli.net/2020/11/26/CRdQZVulemStLOo.png" style="zoom:80%" align=center /> <p>解压得到flag</p> <img src="https://i.loli.net/2020/11/26/VnltADq95u3aoNC.png" style="zoom:100%" align=center /></div></li></ol><p><strong>关键词：伪加密、CRC32碰撞、zip明文攻击</strong></p><ol start="3"><li>misc3 Word文档的本质<br>下载附件，是一个word文件。<div align="center"> <img src="https://i.loli.net/2020/11/26/tpdLN5I6DcW3Alg.png" style="zoom:40%" align=center /></div>根据提示 word的本质，想到word是一种压缩的xml（？）。用压缩管理器打开word，然后翻目录。发现f14g.xml 用文本浏览器打开 得到flag<div align="center"> <img src="https://i.loli.net/2020/11/25/IoSugmUNJ3GzeVa.png" style="zoom:100%" align=center /></div></li></ol><p><strong>关键词：word文档、文件本质的理解</strong></p><ol start="4"><li>misc4 PNG</li></ol><p>下载附件，是个PNG文件。</p><div align="center">    <img src="https://i.loli.net/2020/11/25/pZVWuA9CIn38M5K.png" style="zoom:70%" align=center /></div><p>打开之后感觉flag在文件尺寸之外的地方<br>用hex编辑器改文件头，修改尺寸</p><div align="center">    <img src="https://i.loli.net/2020/11/25/TjZvUd2Mc1qQWe8.png" style="zoom:100%" align=center /></div>0000 029C=668；0000 01A9=425； 即该图片的尺寸数据修改之后打开图片，得到flag。<div align="center">    <img src="https://i.loli.net/2020/11/25/GAo3D6QwRpiqnvg.png" style="zoom:150%" align=center /></div><p><strong>关键词：PNG图片、文件头修改、图片尺寸</strong></p><ol start="5"><li>misc5 奇怪的声音</li></ol><p>下载附件,是个音频。提示说声音里有字，扔到AU里面。</p><div align="center">    <img src="https://i.loli.net/2020/11/26/AaRfjgsZMBi1Ddk.png" style="zoom:100%" align=center /></div><p>看声谱图，直接出flag。</p><p><strong>关键词：音频隐写、声谱图</strong></p><p>先写这些吧，剩下的下一篇再写。</p>]]></content>
     
@@ -532,8 +532,8 @@
   
   <entry>
     <title>markdown测试</title>
-    <link href="/project/2020/01/01/markdown-test/"/>
-    <url>/project/2020/01/01/markdown-test/</url>
+    <link href="/2020/01/01/markdown-test/"/>
+    <url>/2020/01/01/markdown-test/</url>
     
     <content type="html"><![CDATA[<p>这是一篇用于测试markdown语法能否正常使用的文章。<br>然后这篇文章的封面是薇尔莉特。<br>你需要点进来以查看全文 </p><hr><p><escape><span id="more"></span></escape></p><p>看到全文了吧？<br>因为加了一段</p><pre><code class="hljs">&lt;escape&gt;&lt;!-- more --&gt;&lt;/escape&gt;</code></pre><ul><li>首先</li><li>然后</li><li>再然后</li><li>最后</li></ul><hr><ol><li>first</li><li>then</li><li>and then</li><li>finally</li></ol><hr><p><strong>这段字是粗体的</strong></p><p><em>这段字是斜体的</em></p><blockquote><p>举头望明月，低头思故乡。  ——李白</p></blockquote><p><a href="http://baidu.com/" title="这是一个指向百度的超链接">这是一个指向百度的超链接</a></p><p>这是我的头像</p><div align="center">    <img src="https://i.loli.net/2021/04/10/2CdTmLp7sw6GAur.jpg" width = "300" height = "300" alt="图片名称" align=center />    <p>这段文字也是居中的</p>    <p>因为用了html样式</p></div><p>现在是 2020&#x2F;11&#x2F;24 17:21:38 </p><p>然后这是一段c++代码</p><pre><code class="hljs">#include &lt;iostream&gt;using namespace std;int main()&#123;    cout&lt;&lt;&quot;hello world!&quot;;&#125;</code></pre>]]></content>
     
@@ -551,8 +551,8 @@
   
   <entry>
     <title>Hello World ！</title>
-    <link href="/project/1970/01/01/hello-world/"/>
-    <url>/project/1970/01/01/hello-world/</url>
+    <link href="/1970/01/01/hello-world/"/>
+    <url>/1970/01/01/hello-world/</url>
     
     <content type="html"><![CDATA[<p>WELCOME TO MRCX’s BLOG！<br>这是一篇用于测试博客是否正常的文章，使用markdown编写。如果你看到了这句话，说明我的博客成功运行了。</p><h2 id="时间线：2020-11-25-博客建立，部署于Gitee2023-9-3-博客转移至Github"><a href="#时间线：2020-11-25-博客建立，部署于Gitee2023-9-3-博客转移至Github" class="headerlink" title="时间线：2020.11.25 博客建立，部署于Gitee2023.9.3 博客转移至Github"></a>时间线：<br>2020.11.25 博客建立，部署于Gitee<br>2023.9.3 博客转移至Github</h2>]]></content>
     

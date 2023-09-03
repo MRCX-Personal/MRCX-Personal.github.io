@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/project/img/fluid.png">
-  <link rel="icon" href="/project/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,7 +19,7 @@
     <meta name="description" content="准备让这个博客活起来，不只是流水账的记录CTF学习历程。正好最近用QX5252制作了一些东西，顺便写篇博客记一下踩过的坑和这个IC一些注意事项。（封面大雾）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="QX5252使用小注">
-<meta property="og:url" content="http://mrcx-personal.github.io/project/2021/08/05/qx5252tips/index.html">
+<meta property="og:url" content="https://mrcx-personal.github.io/2021/08/05/qx5252tips/index.html">
 <meta property="og:site_name" content="MRCX&#39;s Blog!">
 <meta property="og:description" content="准备让这个博客活起来，不只是流水账的记录CTF学习历程。正好最近用QX5252制作了一些东西，顺便写篇博客记一下踩过的坑和这个IC一些注意事项。（封面大雾）">
 <meta property="og:locale" content="zh_CN">
@@ -59,12 +59,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/project/css/main.css" />
+<link  rel="stylesheet" href="/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/project/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/project/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
@@ -73,15 +73,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"mrcx-personal.github.io","root":"/project/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/project/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"mrcx-personal.github.io","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/project/js/utils.js" ></script>
-  <script  src="/project/js/color-schema.js" ></script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
   
 
 
@@ -98,7 +98,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/project/">
+    <a class="navbar-brand" href="/">
       <strong>MRCX&#39;s Blog!</strong>
     </a>
 
@@ -117,7 +117,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/project/">
+              <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -129,7 +129,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/project/archives/">
+              <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -141,7 +141,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/project/categories/">
+              <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -153,7 +153,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/project/tags/">
+              <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -165,7 +165,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/project/about/">
+              <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -195,7 +195,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/project/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -286,7 +286,7 @@
 <p>  <escape><span id="more"></span></escape></p>
 <p>该IC的datasheet能从各种网站搜索到，这里放个百度文库的连接把。<a target="_blank" rel="noopener" href="https://wenku.baidu.com/view/574fdbaf50e2524de5187ec3.html">https://wenku.baidu.com/view/574fdbaf50e2524de5187ec3.html</a></p>
 <p>官方描述这是个“太阳能草坪灯”专用IC，其实就是个集成输入&#x2F;输出电流检测、电源管理、充放电控制、LED驱动、肖基特二极管的高度集成电路，能做个灯，也能做个电感表什么的。</p>
-<p>其电感大小与电流大小关系大致如下表：<br><img src="https://i.loli.net/2021/08/08/izmqcVBPMY5FUN6.png" srcset="/project/img/loading.gif" lazyload alt="image.png"></p>
+<p>其电感大小与电流大小关系大致如下表：<br><img src="https://i.loli.net/2021/08/08/izmqcVBPMY5FUN6.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
 <p>设计电路时需要注意的几个地方：<br>1.采用的储能原件（比如电池）要低于2.5v，建议使用2v的镍镉电池。电池电压过大会使感光功能不工作，即不论太阳能板有没有输入LED都会供电。<br>2.LED尽量使用小功率的，驱动电压1.8~3v，电压太大的这个IC带不起来，功率太大的容易烧管子。<br>3.太阳能板2v左右。</p>
 
                 
@@ -306,7 +306,7 @@
     
       <span class="category-chain">
         
-  <a href="/project/categories/%E7%94%B5%E5%AD%90%E4%BF%A1%E6%81%AF/" class="category-chain-item">电子信息</a>
+  <a href="/categories/%E7%94%B5%E5%AD%90%E4%BF%A1%E6%81%AF/" class="category-chain-item">电子信息</a>
   
   
 
@@ -321,11 +321,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/project/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" class="print-no-link">#单片机</a>
+        <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" class="print-no-link">#单片机</a>
       
-        <a href="/project/tags/DIY/" class="print-no-link">#DIY</a>
+        <a href="/tags/DIY/" class="print-no-link">#DIY</a>
       
-        <a href="/project/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" class="print-no-link">#嵌入式</a>
+        <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" class="print-no-link">#嵌入式</a>
       
     </div>
   
@@ -338,7 +338,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>QX5252使用小注</div>
-      <div>http://mrcx-personal.github.io/project/2021/08/05/qx5252tips/</div>
+      <div>https://mrcx-personal.github.io/2021/08/05/qx5252tips/</div>
     </div>
     <div class="license-meta">
       
@@ -382,7 +382,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/project/2021/08/08/filesbomb/" title="CTF学习笔记-文件泄露类题目总结">
+                      <a href="/2021/08/08/filesbomb/" title="CTF学习笔记-文件泄露类题目总结">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">CTF学习笔记-文件泄露类题目总结</span>
                         <span class="visible-mobile">上一篇</span>
@@ -392,7 +392,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/project/2021/06/05/bugku-wp-getshell/" title="CTF学习笔记-Bugku getshell">
+                      <a href="/2021/06/05/bugku-wp-getshell/" title="CTF学习笔记-Bugku getshell">
                         <span class="hidden-mobile">CTF学习笔记-Bugku getshell</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -522,8 +522,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/project/js/events.js" ></script>
-<script  src="/project/js/plugins.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -545,7 +545,7 @@
 
 
   
-    <script  src="/project/js/img-lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -644,7 +644,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/project/js/local-search.js" ></script>
+  <script  src="/js/local-search.js" ></script>
 
 
 
@@ -652,7 +652,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/project/js/boot.js" ></script>
+<script  src="/js/boot.js" ></script>
 
 
   

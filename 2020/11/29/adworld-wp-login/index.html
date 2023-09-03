@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/project/img/fluid.png">
-  <link rel="icon" href="/project/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,7 +19,7 @@
     <meta name="description" content="题目名称：签到题 题目来源：SSCTF-2017 题目类型：MISC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CTF学习笔记-攻防世界WP 签到题">
-<meta property="og:url" content="http://mrcx-personal.github.io/project/2020/11/29/adworld-wp-login/index.html">
+<meta property="og:url" content="https://mrcx-personal.github.io/2020/11/29/adworld-wp-login/index.html">
 <meta property="og:site_name" content="MRCX&#39;s Blog!">
 <meta property="og:description" content="题目名称：签到题 题目来源：SSCTF-2017 题目类型：MISC">
 <meta property="og:locale" content="zh_CN">
@@ -61,12 +61,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/project/css/main.css" />
+<link  rel="stylesheet" href="/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/project/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/project/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
@@ -75,15 +75,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"mrcx-personal.github.io","root":"/project/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/project/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"mrcx-personal.github.io","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/project/js/utils.js" ></script>
-  <script  src="/project/js/color-schema.js" ></script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
   
 
 
@@ -100,7 +100,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/project/">
+    <a class="navbar-brand" href="/">
       <strong>MRCX&#39;s Blog!</strong>
     </a>
 
@@ -119,7 +119,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/project/">
+              <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -131,7 +131,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/project/archives/">
+              <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -143,7 +143,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/project/categories/">
+              <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -155,7 +155,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/project/tags/">
+              <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -167,7 +167,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/project/about/">
+              <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -197,7 +197,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/project/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -301,19 +301,19 @@
 <p>不用想，后面的字符串肯定是和flag有关的。<br>判断是一串base64，复制然后解密</p>
 <p>但是好像并没有什么用</p>
 <div align="center">
-    <img src="https://i.loli.net/2020/11/29/mWwTQSc3a4CBe6I.png" srcset="/project/img/loading.gif" lazyload style="zoom:100%" align=center />
+    <img src="https://i.loli.net/2020/11/29/mWwTQSc3a4CBe6I.png" srcset="/img/loading.gif" lazyload style="zoom:100%" align=center />
 </div>
 
 <p>显然还不够，继续解。<br>使用 栅栏密码</p>
 <p>收效甚微</p>
 <div align="center">
-    <img src="https://i.loli.net/2020/11/29/6EUzZwkq1K3tpCG.png" srcset="/project/img/loading.gif" lazyload style="zoom:100%" align=center />
+    <img src="https://i.loli.net/2020/11/29/6EUzZwkq1K3tpCG.png" srcset="/img/loading.gif" lazyload style="zoom:100%" align=center />
 </div>
 
 <p>快了快了<br>使用 凯撒加密</p>
 <p>效果拔群</p>
 <div align="center">
-    <img src="https://i.loli.net/2020/11/29/1oX5gjaF3NkdcwY.png" srcset="/project/img/loading.gif" lazyload style="zoom:70%" align=center />
+    <img src="https://i.loli.net/2020/11/29/1oX5gjaF3NkdcwY.png" srcset="/img/loading.gif" lazyload style="zoom:70%" align=center />
 </div>
 得到flag
 
@@ -335,7 +335,7 @@
     
       <span class="category-chain">
         
-  <a href="/project/categories/CTF/" class="category-chain-item">CTF</a>
+  <a href="/categories/CTF/" class="category-chain-item">CTF</a>
   
   
 
@@ -350,11 +350,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/project/tags/MISC/" class="print-no-link">#MISC</a>
+        <a href="/tags/MISC/" class="print-no-link">#MISC</a>
       
-        <a href="/project/tags/CTF/" class="print-no-link">#CTF</a>
+        <a href="/tags/CTF/" class="print-no-link">#CTF</a>
       
-        <a href="/project/tags/crypto/" class="print-no-link">#crypto</a>
+        <a href="/tags/crypto/" class="print-no-link">#crypto</a>
       
     </div>
   
@@ -367,7 +367,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>CTF学习笔记-攻防世界WP 签到题</div>
-      <div>http://mrcx-personal.github.io/project/2020/11/29/adworld-wp-login/</div>
+      <div>https://mrcx-personal.github.io/2020/11/29/adworld-wp-login/</div>
     </div>
     <div class="license-meta">
       
@@ -411,7 +411,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/project/2020/12/01/hyouka20201208/" title="冰菓 Hyouka 米泽穗信 资源共享">
+                      <a href="/2020/12/01/hyouka20201208/" title="冰菓 Hyouka 米泽穗信 资源共享">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">冰菓 Hyouka 米泽穗信 资源共享</span>
                         <span class="visible-mobile">上一篇</span>
@@ -421,7 +421,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/project/2020/11/25/adworld-wp-nosignal/" title="CTF学习笔记-攻防世界WP 信号不好先挂了">
+                      <a href="/2020/11/25/adworld-wp-nosignal/" title="CTF学习笔记-攻防世界WP 信号不好先挂了">
                         <span class="hidden-mobile">CTF学习笔记-攻防世界WP 信号不好先挂了</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -551,8 +551,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/project/js/events.js" ></script>
-<script  src="/project/js/plugins.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -574,7 +574,7 @@
 
 
   
-    <script  src="/project/js/img-lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -673,7 +673,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/project/js/local-search.js" ></script>
+  <script  src="/js/local-search.js" ></script>
 
 
 
@@ -681,7 +681,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/project/js/boot.js" ></script>
+<script  src="/js/boot.js" ></script>
 
 
   
