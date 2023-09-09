@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>【Project-Flash】你的下一只手电筒，或许可以是个投影仪？！ - MRCX&#039;s Blog!</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="MRCX&#039;s Blog!"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="MRCX&#039;s Blog!"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="&amp;amp;emsp;&amp;amp;emsp;摘要：可调光强光手电筒+智能微投+HDMI&amp;#x2F;WiFi投屏+低功耗服务器&amp;amp;emsp;&amp;amp;emsp;产品亮点：和强光手电筒差不多大小，首先能当手电筒用，然后既能当独立的安卓微投使用，又可以HDMI输入当普通的投影仪，还可以把内置安卓HDMI输出到显示器，当个电视盒子用，当然也能当作一个低功耗armLinux服务器使用。非常适合宿舍和租房人群。"><meta property="og:type" content="blog"><meta property="og:title" content="【Project-Flash】你的下一只手电筒，或许可以是个投影仪？！"><meta property="og:url" content="https://mrcx-personal.github.io/2022/10/11/Project-Flash/"><meta property="og:site_name" content="MRCX&#039;s Blog!"><meta property="og:description" content="&amp;amp;emsp;&amp;amp;emsp;摘要：可调光强光手电筒+智能微投+HDMI&amp;#x2F;WiFi投屏+低功耗服务器&amp;amp;emsp;&amp;amp;emsp;产品亮点：和强光手电筒差不多大小，首先能当手电筒用，然后既能当独立的安卓微投使用，又可以HDMI输入当普通的投影仪，还可以把内置安卓HDMI输出到显示器，当个电视盒子用，当然也能当作一个低功耗armLinux服务器使用。非常适合宿舍和租房人群。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://mrcx-personal.github.io/picsrc/cover-projectflash.jpeg"><meta property="article:published_time" content="2022-10-10T16:00:00.000Z"><meta property="article:modified_time" content="2023-09-09T14:37:34.916Z"><meta property="article:author" content="MRCX"><meta property="article:tag" content="DIY"><meta property="article:tag" content="数码"><meta property="article:tag" content="投影仪"><meta property="article:tag" content="Linux"><meta property="article:tag" content="ARM"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://mrcx-personal.github.io/picsrc/cover-projectflash.jpeg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://mrcx-personal.github.io/2022/10/11/Project-Flash/"},"headline":"【Project-Flash】你的下一只手电筒，或许可以是个投影仪？！","image":[],"datePublished":"2022-10-10T16:00:00.000Z","dateModified":"2023-09-09T14:37:34.916Z","author":{"@type":"Person","name":"MRCX"},"publisher":{"@type":"Organization","name":"MRCX's Blog!","logo":{"@type":"ImageObject","url":{"text":"MRCX's Blog!"}}},"description":"&amp;emsp;&amp;emsp;摘要：可调光强光手电筒+智能微投+HDMI&#x2F;WiFi投屏+低功耗服务器&amp;emsp;&amp;emsp;产品亮点：和强光手电筒差不多大小，首先能当手电筒用，然后既能当独立的安卓微投使用，又可以HDMI输入当普通的投影仪，还可以把内置安卓HDMI输出到显示器，当个电视盒子用，当然也能当作一个低功耗armLinux服务器使用。非常适合宿舍和租房人群。"}</script><link rel="canonical" href="https://mrcx-personal.github.io/2022/10/11/Project-Flash/"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">MRCX&#039;s Blog!</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">文章</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a><a class="navbar-item" href="/resume">简历</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/picsrc/cover-projectflash.jpeg" alt="【Project-Flash】你的下一只手电筒，或许可以是个投影仪？！"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-10-10T16:00:00.000Z" title="2022/10/11 上午12:00:00">2022-10-11</time>发表</span><span class="level-item"><a class="link-muted" href="/categories/DIY%E4%BA%A7%E5%93%81/">DIY产品</a></span><span class="level-item">19 分钟读完 (大约2816个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">【Project-Flash】你的下一只手电筒，或许可以是个投影仪？！</h1><div class="content"><meta name="referrer" content="no-referrer"/>
+
+<p>&emsp;&emsp;摘要：可调光强光手电筒+智能微投+HDMI&#x2F;WiFi投屏+低功耗服务器<br>&emsp;&emsp;产品亮点：和强光手电筒差不多大小，首先能当手电筒用，然后既能当独立的安卓微投使用，又可以HDMI输入当普通的投影仪，还可以把内置安卓HDMI输出到显示器，当个电视盒子用，当然也能当作一个低功耗armLinux服务器使用。非常适合宿舍和租房人群。</p>
+<hr>
+<p>  <escape><span id="more"></span></escape></p>
+<ul>
+<li><p>图文评测： <a target="_blank" rel="noopener" href="https://www.coolapk.com/feed/39983412" title="外链-酷安网">https://www.coolapk.com/feed/39983412</a></p>
+</li>
+<li><p>介绍PV：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av900855249/">https://www.bilibili.com/video/av900855249/</a></p>
+</li>
+<li><p>长视频实机演示：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av731423827/">https://www.bilibili.com/video/av731423827/</a></p>
+</li>
+</ul>
+<p>注：文章所描述均为第一版成品，第二版正在准备制作中，变化如下<br><font color=green> +优化的外观和体积 </font><br><font color=green> +更稳定的信号传输 </font><br><font color=green> +按键可编辑的红外遥控器 </font><br><font color=red> -去掉机身上的操作按键，用红外遥控替代 </font></p>
+<hr>
+<p>产品暂命名Project-Flash。取投影仪“Projector”、闪光“Flash”、项目“Project”三个单词之和。</p>
+<h1 id="产品亮点与竞品分析"><a href="#产品亮点与竞品分析" class="headerlink" title="产品亮点与竞品分析"></a>产品亮点与竞品分析</h1><p>&emsp;&emsp;首先整体体积非常小，和强光手电筒差不多，单手可以轻松握持。功能方面，首先能当手电筒用，然后既能当独立的安卓微投使用，又可以HDMI输入当普通的投影仪，还可以把内置安卓HDMI输出到显示器，当个电视盒子用，当然也能当作一个低功耗armLinux服务器使用。非常适合宿舍、租房、露营、演示等人群或场景。</p>
+<p>&emsp;&emsp;市面上已有的类似产品：<br>1.安卓&#x2F;Linux盒子，就是个小主机，而且大多数没有内置电池。使用时一定要有一台显示器或者电视，需要提供5~12V的电源。<br>2.普通便携投影：只支持HDMI输入或者输出一种方案。而且有的投影HDMI甚至走的采集卡方案，延迟和画质一言难尽。虽然市面上常见的便携投影大多数内置的SOC性能不是很强，但是看个在线视频、跑点旧的模拟器游戏也是可以的。HDMI只支持输入的话，其使用场景也比较受限。<br>3.本产品Project-Flash：HDMI同时支持输入和输出，内置电池，且支持多系统，使用场景就非常多了。比如租房或者住宿舍的人群，屋子里面有电视的话可以接电视，放假回家、更换住所的时候可以直接拔线带走，没有电视的时候也可也随时开启投影来看视频，不用担心软件、影视资源等的遗失。当然也适合小组、办公室等场合，平时放着当一台Linux服务器，需要的时候可以打开光机投放演示文稿、演示视频等。也适合喜欢户外、露营，或者需要经常外出等的人群，平时放家里当电视盒子或者家庭NAS，外出时直接带走。HDMI为输入的时候，也可以当一个普通的投影仪使用，连接计算机、游戏主机等，享受大屏大画面。</p>
+<h1 id="外观展示"><a href="#外观展示" class="headerlink" title="外观展示"></a>外观展示</h1><p>&emsp;&emsp;首先看下产品外观。根据产品定位，这种产品的体积，在保证性能的前提下越小越好。Project-Flash体积为113x60x25mm，重量300g左右，一只手可以轻松拿住。<br>&emsp;&emsp;原型机外壳使用白色树脂光固化3D打印，优点是试错成本低，缺点是材料容易发生热变形，使用一段时间后机身会变软。建议使用ABS塑料或者CNC金属件。</p>
+<p><img src="https://image.coolapk.com/feed/2022/1011/17/4320998_49832fab_1152_6567_463@3840x2160.jpeg.m.jpg" alt="外观展示1"></p>
+<p><img src="https://image.coolapk.com/feed/2022/1011/17/4320998_4317c41a_1152_6574_935@3840x2160.jpeg.m.jpg" alt="外观展示2"></p>
+<img src="https://image.coolapk.com/feed/2022/1011/17/4320998_914f71d3_1152_6576_935@2494x3325.jpeg.m.jpg" height="50%" />
+<br />
+&emsp;&emsp;（发黄是因为三脚架螺口的橡胶）
+
+<br />
+
+<p>&emsp;&emsp;和一些日常生活中的物品比较，如图所示。</p>
+<p><img src="https://image.coolapk.com/feed/2022/1011/10/4320998_ecc5ec1f_4402_921_483@1920x1080.jpeg.m.jpg" alt="尺寸比较"></p>
+<h1 id="硬件配置"><a href="#硬件配置" class="headerlink" title="硬件配置"></a>硬件配置</h1><p>&emsp;&emsp;原型机的配置参数如图所示：<br><img src="https://image.coolapk.com/feed/2022/1011/10/4320998_ab6abf96_4402_922_305@1920x1080.jpeg.m.jpg" alt="配置参数"></p>
+<p>&emsp;&emsp;机身所有外设接口如图所示：<br><img src="https://image.coolapk.com/feed/2022/1011/10/4320998_7cd7e3a7_4408_9135_600@1920x1080.jpeg.m.jpg" alt="接口"></p>
+<p>&emsp;&emsp;产品的亮点在于同一个HDMI既能输入又能输出。HDMI为输入的时候，可以当一个普通的投影仪使用，连接计算机、游戏主机等，享受大屏大画面。产品采用Amlogic S905y2 SOC（当前版本），当HDMI作为输出的时候，可以将内置的安卓系统输出到电视机、显示器上，可以作为一个高性能电视盒子用，支持8K分辨率输出。同时，产品可以从SD卡启动或者烧录Debian、Ubuntu等常见发行版Linux，单系统板功耗3w左右，配合内置的电池，可以作为一个低功耗armLinux服务器使用，支持供电无缝切换。</p>
+<h1 id="功能详解"><a href="#功能详解" class="headerlink" title="功能详解"></a>功能详解</h1><p>下面从使用测评的角度来展示这个产品</p>
+<h2 id="1-作为强光手电筒"><a href="#1-作为强光手电筒" class="headerlink" title="1.作为强光手电筒"></a>1.作为强光手电筒</h2><p>&emsp;&emsp;Project-Flash使用了10W的SST20灯珠，有聚光透镜。支持低中高爆闪四档，支持无极调光，并且可以分别给低中高三个档位保存自定义亮度预设。图示为手电筒的开关，和一般的强光手电筒一样，手感清脆。</p>
+<p><img src="https://image.coolapk.com/feed/2022/1011/17/4320998_a5b6ff65_1156_4412_490@2494x3325.jpeg.m.jpg" alt="手电筒开关"></p>
+<p>&emsp;&emsp;最低亮度和最高亮度在地下停车场和地下储藏室的效果如图：</p>
+<p><img src="https://image.coolapk.com/feed/2022/1011/10/4320998_1b672ecb_4408_9103_375@1920x1080.jpeg.m.jpg" alt="停车场-低亮度"></p>
+<p><img src="https://image.coolapk.com/feed/2022/1011/10/4320998_cf8239fc_4408_9109_346@1920x1080.jpeg.m.jpg" alt="停车场-高亮度"></p>
+<p><img src="https://image.coolapk.com/feed/2022/1011/10/4320998_cc86bfd0_4408_9092_297@1920x1080.jpeg.m.jpg" alt="储藏室-低亮度"></p>
+<p><img src="https://image.coolapk.com/feed/2022/1011/10/4320998_aec8a17d_4408_9094_935@1920x1080.jpeg.m.jpg" alt="储藏室-高亮度"></p>
+<p>&emsp;&emsp;个人感觉不错，亮度挺足的。有网友建议上70.2灯珠，亮度和显色指数都更佳，后面的版本会考虑。</p>
+<h2 id="2-作为智能微投"><a href="#2-作为智能微投" class="headerlink" title="2.作为智能微投"></a>2.作为智能微投</h2><p>&emsp;&emsp;光机部分是从某鱼买的，自带驱动板，之后一切的开发基于这个自带的驱动板（原谅笔者现在还在学习当中，希望以后能有做出DLP驱动板的技术）。物理分辨率应该是960x540，亮度100ANSI流明。为了兼顾兼容性和清晰度，把修改驱动板EDID从1080P到720P。系统部分使用s905y2作为核心板，配置4+32，支持microSD。这个soc主要是用在电视盒子上面，网上有很多AndroidTV的包可以用，而且可以烧录debian等发行版linux。</p>
+<p>白天拉窗帘投影大概七八十寸效果</p>
+<p><img src="https://image.coolapk.com/feed/2022/0824/17/4320998_b5b15c42_3445_4476_866@3325x2494.jpeg.m.jpg" alt="效果图"></p>
+<p>晚上室外投影130寸</p>
+<p><img src="https://image.coolapk.com/feed/2022/1011/10/4320998_2ebf3423_4413_1452_394@1920x1080.jpeg.m.jpg" alt="效果图"></p>
+<p>在宿舍窗帘里投影看番<br><img src="https://image.coolapk.com/feed/2022/1011/10/4320998_2f8cab29_4413_1478_704@1800x1800.jpeg.m.jpg" alt="效果图"></p>
+<h2 id="3-有线无线投屏"><a href="#3-有线无线投屏" class="headerlink" title="3.有线无线投屏"></a>3.有线无线投屏</h2><p>把开关拨到二档，HDMI接口会发光，此时HDMI为输入。这样就可以接入比如电脑、游戏主机、开发板等支持HDMI信号的设备，当作一个普通的投影仪显示器用。默认分辨率为720P，最高支持1080P。纯硬件实现的信号输入，所以几乎可以做到无延迟。拿来演示PPT、投屏打游戏都是可以的。</p>
+<p><img src="https://image.coolapk.com/feed/2022/1011/10/4320998_5449a3fa_4413_1484_147@1920x1080.jpeg.m.jpg" alt="HDMI连接PC"></p>
+<p>无线投屏就不多说了，Android TV自带无线输入，也可以使用比如Steam Link等第三方软件实现串流。当然，无线投屏和有线投屏相比，笔者更喜欢无延迟且方便的有线投屏。</p>
+<p><img src="https://image.coolapk.com/feed/2022/1011/17/4320998_46699958_1157_9631_0@3325x2494.jpeg.m.jpg" alt="Steam Link无线串流"></p>
+<h2 id="4-作为电视盒子、Linux服务器"><a href="#4-作为电视盒子、Linux服务器" class="headerlink" title="4.作为电视盒子、Linux服务器"></a>4.作为电视盒子、Linux服务器</h2><p>在不开投影的时候把开关拨到三档，然后HDMI接显示器，系统板的信号就可以输出到外接的显示器或者电视上去。这样的话，空闲的时候就可以当作一个电视盒子来用。官方文档说最高支持4K分辨率输出，不过笔者没有这么高分辨率的显示器。测试输出1080P是没问题的。<br><img src="https://image.coolapk.com/feed/2022/1011/10/4320998_15224635_4413_1511_568@1920x1080.jpeg.m.jpg" alt="HDMI输出到显示器"><br>使用Amlogic S905Y2处理器，支持2.4&#x2F;5GHz双频WIFI，不论是在线视频还是玩一些旧一点的模拟器游戏都是可以的。<br><img src="https://image.coolapk.com/feed/2022/1011/10/4320998_3765aba2_4413_1459_654@1920x1080.jpeg.m.jpg" alt="PPSSPP运行游戏"><br>也可也从SD卡启动或者烧录Debian、Ubuntu等常见LInux，作为自带UPS的arm服务器使用。（这里使用的termux+proot容器方式运行Debian，因为当时安卓以及部署好不想再重烧emmc了）<br><img src="https://image.coolapk.com/feed/2022/1011/10/4320998_a70ae682_4416_33_51@1920x1080.jpeg.m.jpg" alt="运行Debian系统"></p>
+<h1 id="总结、杂谈"><a href="#总结、杂谈" class="headerlink" title="总结、杂谈"></a>总结、杂谈</h1><p>&emsp;&emsp;至于做这个项目的灵感来源，则是小时候玩过一种玩具，能投影出固定画片的手电筒。当时觉得很惊奇，想“如果这投影出来的东西能动，能拿来看电视就好了”。然后这不就实现了嘛，而且不只有手电筒和投影仪的功能，而且实现了各种实用功能。<br>而且“手电筒”和“投影仪”，正巧都是黑暗环境下使用的东西，极限的体积压缩下，整体的体积做的和强光手电筒差不多（当然也牺牲了一些功能和性能）。</p>
+<p>&emsp;&emsp;还有一种方案，是整个机子做成扁平的，和普通的安卓盒子差不多外观，也内置DLP光机。这样可以有更大的电池和更好的散热，体积可以上300ANSI流明的光机，PCB也可以更大点，功能稳定性更好。但是就没之前那种“新鲜感”和“惊奇感”了，只能是投影仪+Linux盒子了。（当然也可也外壳做成COB灯，吊起来当个吊灯用，但其性能仅能满足比如宿舍床位这种场景）</p>
+<p>Project-Flash立项于2022-04，完成于2022-08，发布于2022-09。希望将来有一天，笔者可以自己能画一块DLP驱动板和arm单板电脑吧。</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>【Project-Flash】你的下一只手电筒，或许可以是个投影仪？！</p><p><a href="https://mrcx-personal.github.io/2022/10/11/Project-Flash/">https://mrcx-personal.github.io/2022/10/11/Project-Flash/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>MRCX</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2022-10-11</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2023-09-09</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/3.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/3.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/DIY/">DIY</a><a class="link-muted mr-2" rel="tag" href="/tags/%E6%95%B0%E7%A0%81/">数码</a><a class="link-muted mr-2" rel="tag" href="/tags/%E6%8A%95%E5%BD%B1%E4%BB%AA/">投影仪</a><a class="link-muted mr-2" rel="tag" href="/tags/Linux/">Linux</a><a class="link-muted mr-2" rel="tag" href="/tags/ARM/">ARM</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2023/07/13/DualTabletair/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">【DualTablet-Air】能当全功能显示器的安卓“屏”板！</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/08/18/Creative_a_server/"><span class="level-item">从无到有，打造一台属于自己的公网服务器</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="https://i.loli.net/2021/04/10/2CdTmLp7sw6GAur.jpg" alt="MRCX"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">MRCX</p><p class="is-size-6 is-block">即使是渺小如尘埃的我们，亦可以推动世界。</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">23</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">5</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">25</p></a></div></div></nav><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="iconfont icon-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="oshwhub" href="https://oshwhub.com/"><i class="iconfont icon-oshwhub"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://twitter.com"><i class="iconfont icon-bilibili"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Lofter" href="https://www.lofter.com/"><i class="iconfont icon-lofter"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#产品亮点与竞品分析"><span class="level-left"><span class="level-item">1</span><span class="level-item">产品亮点与竞品分析</span></span></a></li><li><a class="level is-mobile" href="#外观展示"><span class="level-left"><span class="level-item">2</span><span class="level-item">外观展示</span></span></a></li><li><a class="level is-mobile" href="#硬件配置"><span class="level-left"><span class="level-item">3</span><span class="level-item">硬件配置</span></span></a></li><li><a class="level is-mobile" href="#功能详解"><span class="level-left"><span class="level-item">4</span><span class="level-item">功能详解</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-作为强光手电筒"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">1.作为强光手电筒</span></span></a></li><li><a class="level is-mobile" href="#2-作为智能微投"><span class="level-left"><span class="level-item">4.2</span><span class="level-item">2.作为智能微投</span></span></a></li><li><a class="level is-mobile" href="#3-有线无线投屏"><span class="level-left"><span class="level-item">4.3</span><span class="level-item">3.有线无线投屏</span></span></a></li><li><a class="level is-mobile" href="#4-作为电视盒子、Linux服务器"><span class="level-left"><span class="level-item">4.4</span><span class="level-item">4.作为电视盒子、Linux服务器</span></span></a></li></ul></li><li><a class="level is-mobile" href="#总结、杂谈"><span class="level-left"><span class="level-item">5</span><span class="level-item">总结、杂谈</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">MRCX&#039;s Blog!</a><p class="is-size-7"><span>&copy; 2023 MRCX</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">备案号备案号备案号</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
