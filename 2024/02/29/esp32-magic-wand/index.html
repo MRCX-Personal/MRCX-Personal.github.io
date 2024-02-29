@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>DIY魔杖鼠标（ESP32+MPU6050实现蓝牙体感鼠标） - MRCX&#039;s Blog!</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="MRCX&#039;s Blog!"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="MRCX&#039;s Blog!"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="基于ESP32和MPU6050实现的蓝牙体感鼠标，外形为哈利波特的魔杖。"><meta property="og:type" content="blog"><meta property="og:title" content="DIY魔杖鼠标（ESP32+MPU6050实现蓝牙体感鼠标）"><meta property="og:url" content="https://mrcx-personal.github.io/2024/02/29/esp32-magic-wand/"><meta property="og:site_name" content="MRCX&#039;s Blog!"><meta property="og:description" content="基于ESP32和MPU6050实现的蓝牙体感鼠标，外形为哈利波特的魔杖。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://mrcx-personal.github.io/picsrc/cover_Magicwand.jpg"><meta property="article:published_time" content="2024-02-28T16:00:00.000Z"><meta property="article:modified_time" content="2024-02-29T09:21:37.319Z"><meta property="article:author" content="MRCX"><meta property="article:tag" content="DIY"><meta property="article:tag" content="嵌入式"><meta property="article:tag" content="ESP32"><meta property="article:tag" content="ACG_Create"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://mrcx-personal.github.io/picsrc/cover_Magicwand.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://mrcx-personal.github.io/2024/02/29/esp32-magic-wand/"},"headline":"DIY魔杖鼠标（ESP32+MPU6050实现蓝牙体感鼠标）","image":["https://mrcx-personal.github.io/picsrc/cover_Magicwand.jpg"],"datePublished":"2024-02-28T16:00:00.000Z","dateModified":"2024-02-29T09:21:37.319Z","author":{"@type":"Person","name":"MRCX"},"publisher":{"@type":"Organization","name":"MRCX's Blog!","logo":{"@type":"ImageObject","url":{"text":"MRCX's Blog!"}}},"description":"基于ESP32和MPU6050实现的蓝牙体感鼠标，外形为哈利波特的魔杖。"}</script><link rel="canonical" href="https://mrcx-personal.github.io/2024/02/29/esp32-magic-wand/"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">MRCX&#039;s Blog!</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">文章</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a><a class="navbar-item" href="/resume">简历</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/picsrc/cover_Magicwand.jpg" alt="DIY魔杖鼠标（ESP32+MPU6050实现蓝牙体感鼠标）"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-02-28T16:00:00.000Z" title="2024/2/29 上午12:00:00">2024-02-29</time>发表</span><span class="level-item"><a class="link-muted" href="/categories/%E7%A1%AC%E4%BB%B6/">硬件</a></span><span class="level-item">5 分钟读完 (大约818个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">DIY魔杖鼠标（ESP32+MPU6050实现蓝牙体感鼠标）</h1><div class="content"><p>基于ESP32和MPU6050实现的蓝牙体感鼠标，外形为哈利波特的魔杖。</p>
+<hr>
+<p>  <escape><span id="more"></span></escape></p>
+<ul>
+<li>B站视频链接：<a href="https://">查看链接</a> </li>
+<li>项目Github开源链接：<a target="_blank" rel="noopener" href="https://github.com/MRCX-Personal/BLEmouse_Magic_Wand_with_ESP32/tree/main">查看链接</a></li>
+</ul>
+<h1 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h1><p>尺寸2cmx25cm，外壳为3D打印粗模，热熔胶涂抹以达到原剧中“魔杖”的外观效果，水性漆手涂上色。<br><br><img src="https://github.com/MRCX-Personal/BLEmouse_Magic_Wand_with_ESP32/blob/main/pic/pic1.jpg?raw=true" alt="pic1"></p>
+<p>整体只有一个10x10mm的五向摇杆，整体性很强。一个按钮的体积实现5个功能，美观而实用。<br></p>
+<p><img src="https://github.com/MRCX-Personal/BLEmouse_Magic_Wand_with_ESP32/blob/main/pic/pic3.jpg?raw=true" alt="pic3"></p>
+<p>内置锂电池，底部为电源开关和Type-C充电口，有电源和充电指示灯。<br></p>
+<p><img src="https://github.com/MRCX-Personal/BLEmouse_Magic_Wand_with_ESP32/blob/main/pic/pic2.jpg?raw=true" alt="pic2"></p>
+<p>通过蓝牙连接，兼容性强 <br><br><img src="https://github.com/MRCX-Personal/BLEmouse_Magic_Wand_with_ESP32/blob/main/pic/ble.jpg?raw=true" alt="ble"></p>
+<h1 id="可以实现的功能"><a href="#可以实现的功能" class="headerlink" title="可以实现的功能"></a>可以实现的功能</h1><ul>
+<li>蓝牙连接、自动回连配对的设备</li>
+<li>体感控制鼠标移动（敏感度可调节）</li>
+<li>鼠标左键、右键（点击、长按和拖动）</li>
+<li>滚轮向上、向下</li>
+<li>LED照明常亮、熄灭（荧光闪烁）</li>
+<li>内置锂电池和充放电保护电路、Type-C充电</li>
+</ul>
+<p><img src="https://github.com/MRCX-Personal/BLEmouse_Magic_Wand_with_ESP32/blob/main/pic/pic4.jpg?raw=true" alt="pic3"></p>
+<h1 id="用到的物料"><a href="#用到的物料" class="headerlink" title="用到的物料"></a>用到的物料</h1><ol start="0">
+<li>其实以下1~4可以自己打板，集成在一张PCB上，不过笔者水平非常菜，而且没有热风枪，所以还是买模块组装了……</li>
+<li>ESP32开发板一块<br>理论上什么型号的都可以，笔者选用的是ESP32SuperMini，核心为ESP32-C3，Arduino配置如图所示。其他的型号注意IIC接线的引脚不同。<br><img src="https://github.com/MRCX-Personal/BLEmouse_Magic_Wand_with_ESP32/blob/main/pic/esp32c3.JPG?raw=true" alt="pic4"></li>
+<li>MPU6050传感器模块一个<br>体积当然越小越好，IIC地址为0x68。</li>
+<li>锂电池充放电保护板<br>3.7v和5v互转，相当于一个小充电宝主板</li>
+<li>五向开关<br>这里用的是10x10mm的，规格书买的时候店家会给<br><img src="https://github.com/MRCX-Personal/BLEmouse_Magic_Wand_with_ESP32/blob/main/pic/arrowbutton.JPG?raw=true" alt="pic5"></li>
+<li>聚合物锂电池一块<br>容量随意，能放得进去为主</li>
+<li>拨动开关<br>用作总的电源开关</li>
+<li>白光LED一个<br>照明用，模拟了“荧光闪烁”咒语的效果。如果使用笔者的STL模型，LED要用5mm的。</li>
+<li>飞线若干、焊接工具、热熔胶枪 <br></li>
+</ol>
+<h1 id="制作："><a href="#制作：" class="headerlink" title="制作："></a>制作：</h1><p>接线如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">White LED:</span><br><span class="line">LED+ &lt;-&gt; 3V3</span><br><span class="line">LED- &lt;-&gt; GPIO4</span><br><span class="line"></span><br><span class="line">MPU6050:</span><br><span class="line">VCC &lt;-&gt; 5V</span><br><span class="line">GND &lt;-&gt; GND</span><br><span class="line">SCL &lt;-&gt; GPIO9</span><br><span class="line">SDA &lt;-&gt;GPIO8</span><br><span class="line"></span><br><span class="line">Arrow Button:</span><br><span class="line">Comm &lt;-&gt; GND</span><br><span class="line">Up &lt;-&gt; GPIO10</span><br><span class="line">Down &lt;-&gt; GPIO20</span><br><span class="line">Left &lt;-&gt; GPIO5</span><br><span class="line">Right &lt;-&gt; GPIO7</span><br><span class="line">Press &lt;-&gt; GPIO6</span><br></pre></td></tr></table></figure>
+
+<p>代码详见笔者<a target="_blank" rel="noopener" href="https://github.com/MRCX-Personal/BLEmouse_Magic_Wand_with_ESP32/tree/main">Github</a>，详细制作过程和使用可以前往B站观看，如果你喜欢此作品，欢迎star或者给视频点赞！ <br><br>感谢您的支持。<br></p>
+<hr>
+<h1 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://www.nologo.tech/product/esp32/esp32c3SuperMini/esp32C3SuperMini.html">Document of ESP32C3SuperMini</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/T-vK/ESP32-BLE-Mouse">ESP32 BLE Mouse library</a></li>
+</ul>
+</div><div class="article-licensing box"><div class="licensing-title"><p>DIY魔杖鼠标（ESP32+MPU6050实现蓝牙体感鼠标）</p><p><a href="https://mrcx-personal.github.io/2024/02/29/esp32-magic-wand/">https://mrcx-personal.github.io/2024/02/29/esp32-magic-wand/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>MRCX</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2024-02-29</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-02-29</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/3.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/3.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/DIY/">DIY</a><a class="link-muted mr-2" rel="tag" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a><a class="link-muted mr-2" rel="tag" href="/tags/ESP32/">ESP32</a><a class="link-muted mr-2" rel="tag" href="/tags/ACG-Create/">ACG_Create</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2023/09/13/resume-of-ee/"><span class="level-item">【简历用】电子类/DIY产品设计 作品集</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://i.loli.net/2021/04/10/2CdTmLp7sw6GAur.jpg" alt="MRCX"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">MRCX</p><p class="is-size-6 is-block">即使是渺小如尘埃的我们，亦可以推动世界。</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">25</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">28</p></a></div></div></nav><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="iconfont icon-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="oshwhub" href="https://oshwhub.com/"><i class="iconfont icon-oshwhub"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://twitter.com"><i class="iconfont icon-bilibili"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Lofter" href="https://www.lofter.com/"><i class="iconfont icon-lofter"></i></a></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/CTF/"><span class="level-start"><span class="level-item">CTF</span></span><span class="level-end"><span class="level-item tag">15</span></span></a></li><li><a class="level is-mobile" href="/categories/DIY%E4%BA%A7%E5%93%81/"><span class="level-start"><span class="level-item">DIY产品</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%A1%AC%E4%BB%B6/"><span class="level-start"><span class="level-item">硬件</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB/"><span class="level-start"><span class="level-item">资源共享</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><!--!--></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">MRCX&#039;s Blog!</a><p class="is-size-7"><span>&copy; 2024 MRCX</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">备案号备案号备案号</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
